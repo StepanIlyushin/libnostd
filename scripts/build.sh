@@ -49,8 +49,10 @@ print_header "Configure the project"
 print_step "Running Cmake in $BUIDDIR..."
 
 cmake -S "$ROOTDIR" -B "$ROOTDIR/build"
+ret=$?
 
-if [$? -eq 0]; then
+
+if [ $ret -eq 0 ]; then
 	print_success "Completed successfully."
 else
 	print_error "CMake configuration failed."
@@ -62,7 +64,9 @@ print_step "Buiding the project in $BUILDDIR"
 
 cmake --build "$BUIDDIR"
 
-if [$? -eq 0]; then
+ret=$?
+
+if [ $ret -eq 0 ]; then
         print_success "Builded successfully."
 else
         print_error "BUild  failed."
