@@ -11,24 +11,21 @@ BASEDIR=$(realpath "$(dirname "$0")")
 BASEDIR=$(realpath "$BASEDIR/..")
 BUIDDIR=$ROOTDIR/build
 print_header() {
-	echo "{YELLOW}####################################${NC}"
-	echo "{YELLOW}### ${1}${NC}"
-	echo "{YELLOW}####################################${NC}"
+	echo "${YELLOW}####################################${NC}"
+	echo "${YELLOW}### ${1}${NC}"
+	echo "${YELLOW}####################################${NC}"
 
 }
 
 print_step() {
-	currentdate=$(date +"%Y-%m-%d %H:%N:%S")
 	echo "${BLUE}[ * ] ${1}${NC}"
 }
 
 print_success() {
-        currentdate=$(date +"%Y-%m-%d %H:%N:%S")
         echo "${GREEN}[ V ] ${1}${NC}"
 }
 
 print_error() {
-        currentdate=$(date +"%Y-%m-%d %H:%N:%S")
         echo "${RED}[ X ] ${1}${NC}"
 }
 
@@ -37,9 +34,9 @@ print_error() {
 if [ "$1" = "clean" ]; then
 	print_header "Clean no previous build"
 	if [ -d "$BUILDDIR" ]; then
-		print_step "Removing $BUIDDIR directory..."
+		print_step "Removing $BUILDDIR directory..."
 		rm -rf "$BUILDDIR"
-		print_success "Removed $BUIDDIR directory."
+		print_success "Removed $BUILDDIR directory."
 	else
 		print_success "No priveous build found."
 	fi
