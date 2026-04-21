@@ -1,3 +1,12 @@
+/**
+ * @file
+ * @brief core utils for computer science
+ * @date 2026-04-21
+ * @authors stepanilyushin
+ * @copyrignt MIT license
+*/
+
+
 #include <string>
 namespace cs {
 
