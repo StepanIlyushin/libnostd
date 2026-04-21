@@ -34,7 +34,7 @@ print_error() {
 
 
 
-if ["$1" = "clean"]; then
+if [ "$1" = "clean" ]; then
 	print_header "Clean no previous build"
 	if [ -d "$BUILDDIR"]; then
 		print_step "Removing $BUIDDIR directory..."
