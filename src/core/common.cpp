@@ -1,3 +1,14 @@
+/**
+ * @file
+ * @brief A Powerful C++ Library
+ * @version 0.1.0
+ * @date 2026-04-21
+ * @authors stepanilyushin
+ * @copyright MIT license
+*/
+
+
+
 #include <iostream> 
 
 void credits() {
