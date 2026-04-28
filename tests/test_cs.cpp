@@ -37,3 +37,14 @@ TEST(CS, hex2dec) {
     }
 
 }
+
+TEST(CS, dec2bin) {
+    using cs::dec2bin;
+    EXPECT_TRUE( dec2bin(0) == std::string("0") );
+    EXPECT_TRUE( dec2bin(1) == std::string("1") );
+    EXPECT_TRUE( dec2bin(2) == std::string("10") );
+    EXPECT_TRUE( dec2bin(10) == std::string("1010") );
+    EXPECT_TRUE( dec2bin(15) == std::string("1111") );
+    EXPECT_TRUE( dec2bin(16) == std::string("10000") );
+    EXPECT_TRUE( dec2bin(256) == std::string("100000000") );
+}
