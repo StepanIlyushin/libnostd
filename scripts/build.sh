@@ -43,7 +43,7 @@ if [ "$1" = "clean" ]; then
 fi
 
 print_header "Configure the project"
-print_step "Running Cmake in $BUIDDIR..."
+print_step "Running Cmake in $BUILDDIR..."
 
 cmake -S "$ROOTDIR" -B "$ROOTDIR/build"
 ret=$?
@@ -59,7 +59,7 @@ fi
 print_header "Building the project"
 print_step "Buiding the project in $BUILDDIR"
 
-cmake --build "$BUIDDIR"
+cmake --build "$BUILDDIR"
 
 ret=$?
 
