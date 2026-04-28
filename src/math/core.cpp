@@ -1,10 +1,35 @@
 #include <cmath>
 
+/**
+ * @brief Basic mathematical utils
+*/
+
 namespace math {
+    /**
+     *
+     * @brief Вычисление квадрата числа 
+     * @details Вычисление квадрата через умножение числа на самого себя
+     * (number * number)
+     * @param[in] num Вещественное число
+     * @return квадрат числа 
+    */
 
     double square(double x) {
         return num * num;
     }
+
+    /**
+     *
+     * @brief Быстрое возведение в целую степень 
+     * @details Возведение числа в целую степень с абсолютной точностью 
+       алгоритм: возводим число в степени 1,2,4, .... 2n,
+       каждый раз пока степень не равна 0, сдвигая на один бит вправо.
+       если последний бит 1, домножаем результат на base 
+     * @param[in] base Основание. Вещественное число
+     * @param[in] exp Экспонента. неотрицательнео длинное целое
+     * @return число, возведенное в степень
+    */
+
  
     double fast_power(double base, unsigned long long exp) {
         double v = 1.0;
