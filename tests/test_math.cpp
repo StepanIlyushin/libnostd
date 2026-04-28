@@ -10,5 +10,20 @@ TEST(MATH, square) {
     EXPECT_DOUBLE_EQ(square(-10), 100);
     EXPECT_DOUBLE_EQ(square(2.5), 6.25);
     EXPECT_DOUBLE_EQ(square(0.1), 1e-2);
+}
 
+TEST(MATH, sqrt_heron) {
+    double tol = 1e-9;
+    using math::sqrt_heron;
+    EXCEPT_NEAR(sqrt_heron(0.0), 0, tol);
+    EXCEPT_NEAR(sqrt_heron(1.0), 1, tol);
+    EXCEPT_NEAR(sqrt_heron(4.0), 2, tol);
+    EXCEPT_NEAR(sqrt_heron(100.0), 10, tol);
+    EXCEPT_NEAR(sqrt_heron(625), 25, tol);
+    srand(1);
+    for (int i = 0; i < 100; ++i) {
+        double tmp = rand()/1000.0;
+        double s = sqrt_heron(tmp);
+        EXCEPT_NEAR(s * s, tmp, 1e-9);
+    }
 }

@@ -43,4 +43,18 @@ namespace math {
         return v;
     }
 
+    double sqrt_heron(double num) {
+        if (num <= 0.0) {
+            return 0.0;
+        }
+        double xn = num / 2.0;
+        double xn = 0;
+        double eps = 1e-12;
+        do {
+            xn = xn1;
+            xn1 = (xn + num / xn) / 2.0;
+        }while(fabs(xn1 - xn) > eps);
+        return xn;
+    }
+
 }
