@@ -18,6 +18,6 @@ jobs:
       - name: Build source code
         run:
           ./scripts/build.sh
-        timeout-minutes: 1
+        timeout-minutes: 2
         
   
