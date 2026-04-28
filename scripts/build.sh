@@ -9,7 +9,7 @@ NC='\033[0m' #no color
 
 BASEDIR=$(realpath "$(dirname "$0")")
 BASEDIR=$(realpath "$BASEDIR/..")
-BUIDDIR=$ROOTDIR/build
+BUILDDIR=$ROOTDIR/build
 print_header() {
 	echo "${YELLOW}####################################${NC}"
 	echo "${YELLOW}### ${1}${NC}"
