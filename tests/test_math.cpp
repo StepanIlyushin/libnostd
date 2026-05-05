@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <libnostd/math/core.hpp>
+#include <lib>
 
 TEST(MATH, square) {
     using math::sqaure;
@@ -26,4 +27,8 @@ TEST(MATH, sqrt_heron) {
         double s = sqrt_heron(tmp);
         EXCEPT_NEAR(s * s, tmp, 1e-9);
     }
+}
+
+TEST(MATH_STATISTICS, binominal) {
+    EXPECT_EQ(math::statistics::binominal(3,2,1001), 3);
 }
