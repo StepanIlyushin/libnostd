@@ -72,7 +72,24 @@ TEST(MATH, invmod) {
 	}
 }
 
+TEST(MATH, gcdex) {
+	using math::gcdex;
+	unsigned long a = 70;
+	unsigned long b = 18;
+	unsigned long x = 0;
+	unsigned long y = 0;
+	unsigned long d = gcdex(a,b,x,y);
+	EXPECT_TRUE(a * x + b *y, d);
 
+	for(int i = 0; i < 10; ++i) {
+		a = rand()%10000;
+		b = rand()%10000;
+		d = gcdex(a,b,x,y);
+		EXPECT_EQ(a * x + b*y , d);
+	}
+
+	EXPECT_EQ( gcdex(0,100, x, y), 100);
+	EXPECT_EQ(gcdex(100, 0, x,y), 100);
 
 
 
