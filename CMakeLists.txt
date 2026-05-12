@@ -11,6 +11,11 @@ include_directories(include)
 
 set(CMAKE_CXX_STANDARD 20)
 
-## add_subdirectory(example)
+add_subdirectory(example)
 
-## add_subdirectory(tests)
+add_subdirectory(tests)
+
+add_library {
+	libnostd;
+	src/math/core.cpp;
+}

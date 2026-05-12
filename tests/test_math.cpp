@@ -50,3 +50,16 @@ TEST(MATH, prod) {
 	unsigned long long mod = 1000000007;
 	EXPECT_EQ(prod(8, 13, mod),factorial(13, mod) / factorial(7, mod) );
 }
+
+TEST(MATH, binpowmod) {
+	using math::binpowmod;
+	mod = 1000000007;
+	EXPECT_EQ(binpowmod(2,3,mod), 8);
+	EXPECT_EQ(binpowmod(2,3,7), 1);
+	EXPECT_EQ(binpowmod(10,6,mod), 1000000);
+	EXPECT_EQ(binpowmod(1,1000,mod), 1);
+	EXPECT_EQ(binpowmod(1000,1,mod), 1000);
+	EXPECT_EQ(binpowmod(2,0,mod), 1);
+	EXPECT_EQ(binpowmod(0,3,mod), 0);
+	EXPECT_EQ(binpowmod(0,0,mod), 1);
+}
