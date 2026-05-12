@@ -50,3 +50,54 @@ TEST(MATH, prod) {
 	unsigned long long mod = 1000000007;
 	EXPECT_EQ(prod(8, 13, mod),factorial(13, mod) / factorial(7, mod) );
 }
+
+TEST(MATH, binpowmod) {
+	using math::binpowmod;
+	mod = 1000000007;
+	EXPECT_EQ(binpowmod(2,3,mod), 8);
+	EXPECT_EQ(binpowmod(2,3,7), 1);
+	EXPECT_EQ(binpowmod(10,6,mod), 1000000);
+	EXPECT_EQ(binpowmod(1,1000,mod), 1);
+	EXPECT_EQ(binpowmod(1000,1,mod), 1000);
+	EXPECT_EQ(binpowmod(2,0,mod), 1);
+	EXPECT_EQ(binpowmod(0,3,mod), 0);
+	EXPECT_EQ(binpowmod(0,0,mod), 1);
+}
+
+TEST(MATH, invmod) {
+	using math::invmod;
+	unsigned long = 13;
+	for(unsigned long a = 1; a< mod; a++) {
+		EXPECT_EQ((invmod(a, mod) * a) % mod, 1);
+	}
+}
+
+TEST(MATH, gcdex) {
+	using math::gcdex;
+	unsigned long a = 70;
+	unsigned long b = 18;
+	unsigned long x = 0;
+	unsigned long y = 0;
+	unsigned long d = gcdex(a,b,x,y);
+	EXPECT_TRUE(a * x + b *y, d);
+
+	for(int i = 0; i < 10; ++i) {
+		a = rand()%10000;
+		b = rand()%10000;
+		d = gcdex(a,b,x,y);
+		EXPECT_EQ(a * x + b*y , d);
+	}
+
+	EXPECT_EQ( gcdex(0,100, x, y), 100);
+	EXPECT_EQ(gcdex(100, 0, x,y), 100);
+
+
+
+
+
+
+
+
+
+
+

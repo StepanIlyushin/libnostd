@@ -6,6 +6,9 @@ namespace math {
     double sqrt_heron(double num);
     unsigned long factorial(unsigned long n, unsigned long m);
     unsigned long prod(unsigned long a, unsigned long b, unsigned long m);
+    /**
+     * @warning числа должны быть взаимнопростые
+    */
     unsigned long invmod(unsigned long a, unsigned long m);
     unsigned long binpowmod(unsigned long a, unsigned long deg, unsigned long m);
 
