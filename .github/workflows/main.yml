@@ -11,6 +11,12 @@ permissions:
   pages: write
 
 jobs:
+  check-scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Check scripts with shellcheck
+        run: shellcheck -a -C --shell sh scripts/*.sh
   build:
     run-on: ubuntu-latest
     steps:
