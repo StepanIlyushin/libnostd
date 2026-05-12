@@ -90,14 +90,24 @@ TEST(MATH, gcdex) {
 
 	EXPECT_EQ( gcdex(0,100, x, y), 100);
 	EXPECT_EQ(gcdex(100, 0, x,y), 100);
+}
 
+TEST(MATH, mean) {
+	using math::statistics::mean;
+	double M[] = [1,1,1,1,1,1,1,1,1,1,1];
+	int n = sizeof(M) / sizeof(M[0]);
+	EXPECT_EQ(mean(M, n), 1);
+	double M[] = [1,2,3,4,5,6,7,8,9,10];
+        int n = sizeof(M) / sizeof(M[0]);
+        EXPECT_EQ(mean(M, n), 5.5);
+}
 
-
-
-
-
-
-
-
-
-
+TEST(MATH, var) {
+	using math::statistics::var;
+	double M[] = [1,1,1,1,1,1,1,1,1,1];
+	int n = sizeof(M) / sizeof(M[0]);
+	EXPECT_EQ(var(M, n), 0);
+	double M[] = [2,2,2,2,2,2,2,2,2,2];
+	int  n = sizeof(M) / sizeof(M[0]);
+	EXPECT_EQ(var(M, n),0);
+}
